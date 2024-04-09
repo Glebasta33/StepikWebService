@@ -11,6 +11,10 @@ repositories {
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation("org.eclipse.jetty:jetty-server:9.3.0.M0")
+    implementation("org.eclipse.jetty:jetty-webapp:9.3.0.M0")
+    implementation("javax.servlet:javax.servlet-api:4.0.1")
+
 }
 
 tasks.test {
