@@ -34,7 +34,7 @@ class FrontendServlet : HttpServlet() {
     private var login: String = ""
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
-
+        response.writer.println("<b>Hello HTML</b>")
     }
     override fun doPost(request: HttpServletRequest, response: HttpServletResponse) {
 
