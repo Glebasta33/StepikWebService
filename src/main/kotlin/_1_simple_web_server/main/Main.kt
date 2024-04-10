@@ -1,19 +1,21 @@
 package com.github.gltrusov._1_simple_web_server.main
 
 import com.github.gltrusov._1_simple_web_server.servlets.AllRequestServlet
+import com.github.gltrusov._1_simple_web_server.servlets.MirrorServlet
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.servlet.ServletHolder
 
 fun main() {
-    val allRequestServlet = AllRequestServlet()
-
-    val servletHandler = ServletContextHandler(ServletContextHandler.SESSIONS)
-    servletHandler.addServlet(ServletHolder(allRequestServlet), "/form")
+    val servletHandler = ServletContextHandler(ServletContextHandler.SESSIONS).apply {
+        addServlet(ServletHolder(AllRequestServlet()), "/form")
+        addServlet(ServletHolder(MirrorServlet()), "/mirror")
+    }
 
     Server(8080).apply {
         handler = servletHandler
         start()
+        println("Server started")
         join()
     }
 }
