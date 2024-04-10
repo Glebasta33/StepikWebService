@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Lesson 1.1</title>
+</head>
+<body>
+<form action="form" method="POST">
+    Login: <input type="text" name="message"/>
+    <input type="submit" value="Ok">
+</form>
+
+<form method="GET">
+    <p>
+        <button>Reload with GET</button>
+    </p>
+</form>
+
+<p><b>Message</b>: ${message}</p>
+
+<p>Method: ${method}</p>
+
+<p>URL: ${URL}</p>
+
+<p>PathInfo: ${pathInfo}</p>
+
+<p>SessionId: ${sessionId}</p>
+
+<p>Parameters: ${parameters}</p>
+
+</body>
+</html>
