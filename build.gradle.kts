@@ -15,6 +15,8 @@ dependencies {
     implementation("org.eclipse.jetty:jetty-webapp:9.3.0.M0")
     implementation("javax.servlet:javax.servlet-api:4.0.1")
     implementation("org.freemarker:freemarker:2.3.20")
+    implementation("com.google.code.gson:gson:2.7")
+
 
 }
 

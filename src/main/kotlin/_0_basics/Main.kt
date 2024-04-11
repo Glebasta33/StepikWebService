@@ -1,4 +1,4 @@
-package com.github.gltrusov
+package _0_basics
 
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
