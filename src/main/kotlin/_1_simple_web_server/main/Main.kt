@@ -1,7 +1,7 @@
-package com.github.gltrusov._1_simple_web_server.main
+package _1_simple_web_server.main
 
-import com.github.gltrusov._1_simple_web_server.servlets.AllRequestServlet
-import com.github.gltrusov._1_simple_web_server.servlets.MirrorServlet
+import _1_simple_web_server.servlets.AllRequestServlet
+import _1_simple_web_server.servlets.MirrorServlet
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.servlet.ServletHolder

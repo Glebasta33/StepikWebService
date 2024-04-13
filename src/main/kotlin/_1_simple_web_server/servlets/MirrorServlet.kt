@@ -1,6 +1,6 @@
-package com.github.gltrusov._1_simple_web_server.servlets
+package _1_simple_web_server.servlets
 
-import com.github.gltrusov._1_simple_web_server.templater.PageGenerator
+import _1_simple_web_server.templater.PageGenerator
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse

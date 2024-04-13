@@ -10,11 +10,11 @@ import org.eclipse.jetty.server.handler.ResourceHandler
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.servlet.ServletHolder
 
-class Main
-
 fun main() {
     val accountService = AccountService().apply {
-        addNewUser(UserProfile("admin", "admin", "admin@mail.com"))
+        val admin = UserProfile("admin", "admin", "admin@mail.com")
+        addNewUser(admin)
+        addSession("1234", admin)
     }
 
     val contextHandler = ServletContextHandler(ServletContextHandler.SESSIONS).apply {
@@ -22,20 +22,17 @@ fun main() {
         addServlet(ServletHolder(SessionsServlet(accountService)), "/api/v1/sessions")
     }
 
-    val staticDir = Main::class.java.classLoader.getResource("index.html")?.toExternalForm()
-    println(staticDir)
-
-    //TODO: Изучить ResourceHandler
-    val resourceHandler = ResourceHandler()
-    resourceHandler.resourceBase = staticDir?.replace("index.html", "")
+    val resourceHandler = ResourceHandler().apply {
+        isDirectoriesListed = false
+        resourceBase = "static_resources"
+    }
 
     val handlers = HandlerList().apply {
         handlers = arrayOf(resourceHandler, contextHandler)
     }
 
     Server(8080).apply {
-        handler = resourceHandler
-        handler = contextHandler
+        handler = handlers
         start()
         join()
     }

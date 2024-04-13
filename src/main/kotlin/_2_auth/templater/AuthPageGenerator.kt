@@ -1,11 +1,11 @@
-package _1_simple_web_server.templater
+package _2_auth.templater
 
 import freemarker.template.Configuration
 import freemarker.template.Template
 import java.io.StringWriter
 
-object PageGenerator {
-    private const val HTML_DIR = "\\src\\main\\kotlin\\_1_simple_web_server\\templates\\"
+object AuthPageGenerator {
+    private const val HTML_DIR = "\\src\\main\\kotlin\\_2_auth\\templates\\static_resources"
     private val config: Configuration = Configuration()
 
     fun getPage(filename: String, data: Map<String, Any>): String {

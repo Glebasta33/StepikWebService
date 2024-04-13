@@ -14,9 +14,11 @@ class SessionsServlet(
 
     //get logged user profile
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
-        val sessionId = request.session.id
+        println("doGet: $request")
+
+        val sessionId = "1234"
         val profile = accountService.getUserBySessionId(sessionId)
-        response.contentType = "text/html;charset=utf-8"
+        response.contentType = "application/json"
         if (profile == null) {
             response.status = HttpServletResponse.SC_UNAUTHORIZED
         } else {
