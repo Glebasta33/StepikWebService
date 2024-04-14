@@ -14,9 +14,7 @@ class SessionsServlet(
 
     //get logged user profile
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
-        println("doGet: $request")
-
-        val sessionId = "1234"
+        val sessionId = request.session.id
         val profile = accountService.getUserBySessionId(sessionId)
         response.contentType = "application/json"
         if (profile == null) {
@@ -30,7 +28,25 @@ class SessionsServlet(
 
     //sign in
     override fun doPost(request: HttpServletRequest, response: HttpServletResponse) {
+        val login = request.getParameter("login")
+        val password = request.getParameter("pass")
 
+        response.contentType = "application/json"
+        if (login == null || password == null) {
+            response.status = HttpServletResponse.SC_BAD_REQUEST
+            return
+        }
+
+        val profile = accountService.getUserByLogin(login)
+        if (profile == null || profile.pass != password) {
+            response.status = HttpServletResponse.SC_UNAUTHORIZED
+            return
+        }
+
+        accountService.addSession(request.session.id, profile)
+        val json = gson.toJson(profile)
+        response.writer.println(json)
+        response.status = HttpServletResponse.SC_OK
     }
 
     //sing out

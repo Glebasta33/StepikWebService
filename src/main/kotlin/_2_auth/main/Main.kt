@@ -14,7 +14,6 @@ fun main() {
     val accountService = AccountService().apply {
         val admin = UserProfile("admin", "admin", "admin@mail.com")
         addNewUser(admin)
-        addSession("1234", admin)
     }
 
     val contextHandler = ServletContextHandler(ServletContextHandler.SESSIONS).apply {
