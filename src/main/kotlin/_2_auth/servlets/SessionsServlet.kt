@@ -51,6 +51,16 @@ class SessionsServlet(
 
     //sing out
     override fun doDelete(request: HttpServletRequest, response: HttpServletResponse) {
+        val sessionId = request.session.id
+        val profile = accountService.getUserBySessionId(sessionId)
 
+        response.contentType = "text/html;charset=utf-8"
+        if (profile == null) {
+            response.status = HttpServletResponse.SC_UNAUTHORIZED
+        } else {
+            accountService.deleteSession(sessionId)
+            response.writer.println("Goodbye!")
+            response.status = HttpServletResponse.SC_OK
+        }
     }
 }
