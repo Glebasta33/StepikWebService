@@ -17,8 +17,8 @@ fun main() {
     }
 
     val contextHandler = ServletContextHandler(ServletContextHandler.SESSIONS).apply {
-        addServlet(ServletHolder(UsersServlet(accountService)), "/api/v1/users")
-        addServlet(ServletHolder(SessionsServlet(accountService)), "/api/v1/sessions")
+        addServlet(ServletHolder(UsersServlet(accountService)), "/api/v1/signup")
+        addServlet(ServletHolder(SessionsServlet(accountService)), "/api/v1/signin")
     }
 
     val resourceHandler = ResourceHandler().apply {
