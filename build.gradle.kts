@@ -17,6 +17,8 @@ dependencies {
     implementation("org.freemarker:freemarker:2.3.20")
     implementation("com.google.code.gson:gson:2.7")
 
+    implementation("com.h2database:h2:1.3.148")
+
 
 }
 
