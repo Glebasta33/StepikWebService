@@ -1,7 +1,7 @@
-package _3_jdbc.main
+package _3_1_jdbc.main
 
-import _3_jdbc.db_service.DBException
-import _3_jdbc.db_service.DBService
+import _3_1_jdbc.db_service.DBException
+import _3_1_jdbc.db_service.DBService
 
 fun main() {
     val dbService = DBService()

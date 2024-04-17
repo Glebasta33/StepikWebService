@@ -1,4 +1,4 @@
-package _3_jdbc.db_service.executor
+package _3_1_jdbc.db_service.executor
 
 import java.sql.Connection
 import java.sql.ResultSet

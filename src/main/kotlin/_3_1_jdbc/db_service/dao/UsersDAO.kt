@@ -1,8 +1,8 @@
-package _3_jdbc.db_service.dao
+package _3_1_jdbc.db_service.dao
 
-import _3_jdbc.db_service.data_set.UsersDataSet
-import _3_jdbc.db_service.executor.Executor
-import _3_jdbc.db_service.executor.ResultHandler
+import _3_1_jdbc.db_service.data_set.UsersDataSet
+import _3_1_jdbc.db_service.executor.Executor
+import _3_1_jdbc.db_service.executor.ResultHandler
 import java.sql.Connection
 import java.sql.ResultSet
 

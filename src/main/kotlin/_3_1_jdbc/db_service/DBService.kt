@@ -1,7 +1,7 @@
-package _3_jdbc.db_service
+package _3_1_jdbc.db_service
 
-import _3_jdbc.db_service.dao.UsersDAO
-import _3_jdbc.db_service.data_set.UsersDataSet
+import _3_1_jdbc.db_service.dao.UsersDAO
+import _3_1_jdbc.db_service.data_set.UsersDataSet
 import org.h2.jdbcx.JdbcDataSource
 import java.sql.Connection
 import java.sql.DriverManager

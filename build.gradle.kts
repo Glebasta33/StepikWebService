@@ -18,6 +18,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.7")
 
     implementation("com.h2database:h2:1.3.148")
+    implementation("org.hibernate:hibernate-gradle-plugin:5.6.15.Final")
 
 
 }
