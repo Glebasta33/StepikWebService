@@ -9,7 +9,8 @@ class UsersServlet : HttpServlet() {
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
         val pageVariables = createPageVariablesMap(request)
-        pageVariables["message"] = ""
+
+        println("GET: $pageVariables")
 
         with(response) {
             writer.println(PageGenerator.getPage("enter.html", pageVariables))
@@ -21,19 +22,21 @@ class UsersServlet : HttpServlet() {
     override fun doPost(request: HttpServletRequest, response: HttpServletResponse) {
         val pageVariables = createPageVariablesMap(request)
 
-        val message = request.getParameter("message") //получения значения параметра
+        println("POST: $pageVariables")
+
+        val name = request.getParameter("name") //получения значения параметра
 
         response.contentType = "text/html;charset=utf-8"
 
-        if (message.isNullOrEmpty()) {
+        if (name.isNullOrEmpty()) {
             response.status = HttpServletResponse.SC_FORBIDDEN
         } else {
             response.status = HttpServletResponse.SC_OK
         }
 
-        pageVariables["message"] = message ?: ""
+        pageVariables["name"] = name ?: ""
 
-        response.writer.println(PageGenerator.getPage("enter.html", pageVariables))
+        response.writer.println(PageGenerator.getPage("index.html", pageVariables))
     }
 
     companion object {

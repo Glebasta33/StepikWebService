@@ -6,17 +6,21 @@
 </head>
 <body>
 
-
-
 <p><b>Hello! Enter your name</b></p>
 
-
 <form action="enter" method="POST">
-    Name: <input type="text" name="message"/>
+    Name: <input type="text" name="name"/>
     <input type="submit" value="Ok">
 </form>
 
-<p><b>Message</b>: ${message}</p>
+<button id="myButton" class="float-left submit-button" >Home</button>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "www.yoursite.com";
+    };
+</script>
+
 
 </body>
 </html>
