@@ -4,3 +4,4 @@ plugins {
 rootProject.name = "StepikWebService"
 include("L5Tests")
 include("L6.1Properties")
+include("L6.2Serialization")

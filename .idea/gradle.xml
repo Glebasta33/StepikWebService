@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/L5Tests" />
+            <option value="$PROJECT_DIR$/L6.1Properties" />
           </set>
         </option>
       </GradleProjectSettings>
