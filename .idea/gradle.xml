@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/L5Tests" />
             <option value="$PROJECT_DIR$/L6.1Properties" />
+            <option value="$PROJECT_DIR$/L6.2Serialization" />
+            <option value="$PROJECT_DIR$/L6.3XML" />
           </set>
         </option>
       </GradleProjectSettings>
