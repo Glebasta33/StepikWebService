@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/L6.1Properties" />
             <option value="$PROJECT_DIR$/L6.2Serialization" />
             <option value="$PROJECT_DIR$/L6.3XML" />
+            <option value="$PROJECT_DIR$/L6.4NIO" />
           </set>
         </option>
       </GradleProjectSettings>
